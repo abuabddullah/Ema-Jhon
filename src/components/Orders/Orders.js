@@ -7,15 +7,16 @@ import useCarts from '../React Custom Hooks/useCarts/useCarts';
 import useProducts from '../React Custom Hooks/useProducts/useProducts';
 
 const Orders = () => {
-    const [products, setProducts] = useProducts("products.json")
-    const [cart, setCart] = useCarts(products);
+    const [products, setProducts] = useProducts("http://localhost:5000/products")
+    // const [cart, setCart] = useCarts(products);
+    const [cart, setCart] = useCarts();
 
     const deleteItem = product => {
-        // console.log(product);
-        let rests = cart.filter(pd => pd.id !== product.id)
+        console.log(product);
+        let rests = cart.filter(pd => pd._id !== product._id)
         // console.log(rests);
         setCart(rests)
-        removeFromDb(product.id)
+        removeFromDb(product._id)
 
     }
 
@@ -26,7 +27,7 @@ const Orders = () => {
                     <h1 className="text-4xl my-20">
                         {
                             cart.map(product => <ItemsInCart
-                                key={product.id}
+                                key={product._id}
                                 product={product}
                                 deleteItem={deleteItem} />)
                         }
