@@ -14,7 +14,7 @@
 //     //     .then(res=> res.json())
 //     //     .then(data =>setProducts(data))
 //     // }, []);
-//     const [products, setProducts] = useProducts("http://localhost:5000/products");
+//     const [products, setProducts] = useProducts("https://emajhon-ecommerce-shopping.herokuapp.com/products");
 
 
 
@@ -106,7 +106,7 @@ const Shop = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/products?currentPage=${currentPage}&perPageProducts=${perPageProducts}`;
+        const url = `https://emajhon-ecommerce-shopping.herokuapp.com/products?currentPage=${currentPage}&perPageProducts=${perPageProducts}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data));
@@ -119,7 +119,7 @@ const Shop = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/noOfProducts`;
+        const url = `https://emajhon-ecommerce-shopping.herokuapp.com/noOfProducts`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

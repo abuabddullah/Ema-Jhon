@@ -25,7 +25,7 @@ const useCarts = () => {
         const savedCart = [];
 
 
-        fetch(`http://localhost:5000/productByKeys`, {
+        fetch(`https://emajhon-ecommerce-shopping.herokuapp.com/productByKeys`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

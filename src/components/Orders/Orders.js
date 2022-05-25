@@ -7,7 +7,7 @@ import useCarts from '../React Custom Hooks/useCarts/useCarts';
 import useProducts from '../React Custom Hooks/useProducts/useProducts';
 
 const Orders = () => {
-    const [products, setProducts] = useProducts("http://localhost:5000/products")
+    const [products, setProducts] = useProducts("https://emajhon-ecommerce-shopping.herokuapp.com/products")
     // const [cart, setCart] = useCarts(products);
     const [cart, setCart] = useCarts();
 
